@@ -27,8 +27,9 @@ namespace ViewBagExample.Controllers
         }
     }
 }
+```
 
-/* Views/Home/Index.cshtml */
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -46,3 +47,4 @@ namespace ViewBagExample.Controllers
     </ul>
 </body>
 </html>
+```
