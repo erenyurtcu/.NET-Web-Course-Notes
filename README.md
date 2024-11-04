@@ -28,7 +28,6 @@ namespace ViewBagExample.Controllers
     }
 }
 
-```html
 /* Views/Home/Index.cshtml */
 <!DOCTYPE html>
 <html lang="tr">
