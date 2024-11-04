@@ -100,3 +100,56 @@ namespace TempDataExample.Controllers
 </body>
 </html>
 ```
+# ViewDataExample
+
+Bu proje, ASP.NET MVC kullanarak `ViewData` ile bir listeyi `Controller`'dan `View`'a nasıl gönderebileceğinizi gösterir.
+
+## Kodlar
+
+### Controller ve View Kodları
+
+```csharp
+// Controllers/ProductController.cs
+using System.Collections.Generic;
+using System.Web.Mvc;
+
+namespace ViewDataExample.Controllers
+{
+    public class ProductController : Controller
+    {
+        public ActionResult Index()
+        {
+            // Ürün listesi oluşturuluyor
+            List<string> products = new List<string> { "Bilgisayar", "Tablet", "Akıllı Telefon", "Kulaklık", "Klavye" };
+            
+            // ViewData ile liste View'a gönderiliyor
+            ViewData["ProductList"] = products;
+            
+            return View();
+        }
+    }
+}
+```
+```html
+<!-- Views/Product/Index.cshtml -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>ViewData ile Liste Gönderme</title>
+</head>
+<body>
+    <h2>Ürün Listesi</h2>
+    
+    <ul>
+        @if (ViewData["ProductList"] != null)
+        {
+            foreach (var product in (List<string>)ViewData["ProductList"])
+            {
+                <li>@product</li>
+            }
+        }
+    </ul>
+</body>
+</html>
+```
