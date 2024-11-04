@@ -1,5 +1,3 @@
-# .NET-Web-Course-Notes
-
 # ViewBagExample
 
 Bu proje, ASP.NET MVC kullanarak `ViewBag` ile bir listeyi `Controller`'dan `View`'a nasıl gönderebileceğinizi gösterir.
@@ -30,7 +28,8 @@ namespace ViewBagExample.Controllers
     }
 }
 
-<!-- Views/Home/Index.cshtml -->
+```html
+/* Views/Home/Index.cshtml */
 <!DOCTYPE html>
 <html lang="tr">
 <head>
