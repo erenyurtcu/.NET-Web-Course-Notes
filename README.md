@@ -18,7 +18,8 @@ namespace ViewBagExample.Controllers
         public ActionResult Index()
         {
             // Ürün listesi oluşturuluyor
-            List<string> products = new List<string> { "Laptop", "Tablet", "Akıllı Telefon", "Kulaklık", "Klavye" };
+            List<string> products = new List<string> { "Laptop", "Tablet", "Akıllı Telefon",
+"Kulaklık", "Klavye" };
             
             // ViewBag ile liste View'a gönderiliyor
             ViewBag.ProductList = products;
@@ -120,7 +121,8 @@ namespace ViewDataExample.Controllers
         public ActionResult Index()
         {
             // Ürün listesi oluşturuluyor
-            List<string> products = new List<string> { "Bilgisayar", "Tablet", "Akıllı Telefon", "Kulaklık", "Klavye" };
+            List<string> products = new List<string> { "Bilgisayar", "Tablet",
+"Akıllı Telefon", "Kulaklık", "Klavye" };
             
             // ViewData ile liste View'a gönderiliyor
             ViewData["ProductList"] = products;
