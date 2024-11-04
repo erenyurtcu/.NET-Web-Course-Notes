@@ -48,3 +48,55 @@ namespace ViewBagExample.Controllers
 </body>
 </html>
 ```
+# TempDataExample
+
+Bu proje, ASP.NET MVC kullanarak `TempData` ile bir mesajı bir aksiyondan başka bir aksiyona yönlendirme (`redirect`) sonrasında nasıl gönderebileceğinizi gösterir.
+
+## Kodlar
+
+### Controller ve View Kodları
+
+```csharp
+// Controllers/AccountController.cs
+using System.Web.Mvc;
+
+namespace TempDataExample.Controllers
+{
+    public class AccountController : Controller
+    {
+        public ActionResult Submit()
+        {
+            // TempData kullanarak bir başarı mesajı gönderiyoruz
+            TempData["SuccessMessage"] = "Kullanıcı başarıyla kaydedildi!";
+            
+            // Başka bir aksiyona yönlendirme yapıyoruz
+            return RedirectToAction("Success");
+        }
+
+        public ActionResult Success()
+        {
+            return View();
+        }
+    }
+}
+```
+```html
+<!-- Views/Account/Success.cshtml -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>TempData ile Mesaj Gönderme</title>
+</head>
+<body>
+    <h2>Sonuç</h2>
+    
+    <p>
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <strong>@TempData["SuccessMessage"]</strong>
+        }
+    </p>
+</body>
+</html>
+```
