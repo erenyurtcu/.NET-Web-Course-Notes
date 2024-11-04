@@ -31,6 +31,7 @@ namespace ViewBagExample.Controllers
 ```
 
 ```html
+@model List<ViewBagExample.Models.Product>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
